@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://cdaio.abensrhir.com/"
 title = "The AI CDAIO Office"
 languageCode = "en-us"
 
