@@ -42,7 +42,7 @@ jobs:
           hugo build \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "https://cdaio.abensrhir.com/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

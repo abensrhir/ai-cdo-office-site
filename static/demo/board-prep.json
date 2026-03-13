@@ -151,14 +151,15 @@
         "<span class=\"hl-heading\">Step 3: Deck Production (Exec Comms Lead)</span>",
         "<span class=\"hl-dim\">Building board presentation using SCR format, McKinsey chart standards...</span>",
         "",
-        "  Slide 1:  Executive Summary \u2014 Situation, Complication, Resolution",
-        "  Slide 2:  Maturity Baseline \u2014 6 dimensions vs healthcare peers",
-        "  Slide 3:  The Opportunity \u2014 12 scored use cases, top 5 highlighted",
-        "  Slide 4:  Quick Win: Clinical NLP \u2014 $1.2M impact, 6-week timeline",
-        "  Slide 5:  Investment Ask \u2014 3-scenario model, base case $4.1M/3yr",
-        "  Slide 6:  Architecture & Roadmap \u2014 3 phases, HIPAA-compliant",
-        "  Slide 7:  Risk & Governance \u2014 EU AI Act readiness plan",
-        "  Slide 8:  Next Steps & Timeline \u2014 Q2 milestones + board cadence",
+        "  Slide 1:  Title \u2014 Q1 2026 Board Update",
+        "  Slide 2:  Executive Summary \u2014 Situation, Complication, Resolution",
+        "  Slide 3:  Agenda \u2014 Session roadmap",
+        "  Slides 4\u20136:  KPI Dashboard + Trends \u2014 8 metrics with RAG status",
+        "  Slides 7\u20138:  Initiative Portfolio \u2014 6 programs, status, timeline",
+        "  Slides 9\u201310: Risk Overview \u2014 4 risks with mitigation plans",
+        "  Slides 11\u201312: Budget \u2014 Categories + incremental investment ask",
+        "  Slides 13\u201314: Recommendations + Board Asks \u2014 3 decision items",
+        "  Slides 15\u201317: Appendix \u2014 Backup KPI data + risk register",
         ""
       ],
       "delay": 108
@@ -178,7 +179,7 @@
         "     \u2014 \"Why should we invest in AI when our margins are under pressure?\"",
         "     \u2014 \"What happens if the EU AI Act penalties apply to our diagnostics?\"",
         "     \u2014 \"How do we know the $9.2M return estimate isn't inflated?\"",
-        "  \u2713 Backup slides: 5 appendix slides for deep-dive requests",
+        "  \u2713 Backup slides: 3 appendix slides for deep-dive requests",
         "  \u2713 Talking points: CDO speaking notes per slide",
         ""
       ],
@@ -225,12 +226,12 @@
     {
       "type": "output",
       "lines": [
-        "<span class=\"hl-green\">board-presentation.pptx</span>    8-slide deck (Meridian-specific)",
+        "<span class=\"hl-green\">board-presentation.pptx</span>    17-slide deck (Meridian-specific)",
         "<span class=\"hl-green\">executive-brief.md</span>         2-page pre-read for board members",
         "<span class=\"hl-green\">kpi-scorecard.xlsx</span>         Maturity + peer benchmarks",
         "<span class=\"hl-green\">qa-responses.md</span>            12 anticipated board questions + answers",
         "<span class=\"hl-green\">talking-points.md</span>          CDO speaking notes per slide",
-        "<span class=\"hl-green\">appendix-slides.pptx</span>      5 backup deep-dive slides"
+        "<span class=\"hl-green\">appendix-slides.pptx</span>      Backup deep-dive slides"
       ],
       "delay": 90
     }
