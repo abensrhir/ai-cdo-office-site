@@ -2,6 +2,10 @@
 <meta name="theme-color" content="#1B2A4A">
 <meta name="author" content="{{ site.Params.author }}">
 <link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" href="{{ "favicon.svg" | absURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "favicon.ico" | absURL }}" sizes="any">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
 
 <!-- Open Graph -->
 <meta property="og:title" content="{{ .Title }}">
@@ -31,4 +35,21 @@
       <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
   {{ end }}
+{{ end }}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ site.Title }}",
+  "description": "{{ site.Params.description }}",
+  "url": "{{ site.BaseURL }}",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Cross-platform",
+  "author": { "@type": "Person", "name": "{{ site.Params.author }}", "url": "{{ site.Params.authorURL }}" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "license": "https://opensource.org/licenses/MIT",
+  "codeRepository": "{{ site.Params.repoURL }}"
+}
+</script>
 {{ end }}

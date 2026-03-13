@@ -423,13 +423,146 @@ pre {
   font-weight: 700;
 }
 
-/* Mermaid container */
-.mermaid-container {
-  overflow-x: auto;
-  padding: 1rem 0;
+/* Org Chart */
+.org-chart {
+  padding: 1.5rem 0;
 }
-.mermaid-container .mermaid {
-  background: none;
+.oc-leadership {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.oc-node {
+  text-align: center;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.oc-sub {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-top: 0.1rem;
+}
+.oc-board {
+  background: var(--deep-navy);
+  color: var(--white);
+}
+.oc-cdaio {
+  background: var(--medium-blue);
+  color: var(--white);
+}
+.oc-director {
+  background: var(--ice-blue);
+  color: var(--deep-navy);
+  border: 1.5px solid var(--medium-blue);
+}
+.oc-staff {
+  display: inline-block;
+  background: var(--white);
+  color: var(--deep-navy);
+  border: 1.5px solid var(--ice-blue);
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+}
+.oc-qa {
+  background: var(--white);
+  color: var(--deep-navy);
+  border: 2px dashed var(--amber);
+}
+.oc-line {
+  width: 2px;
+  height: 18px;
+  background: var(--medium-blue);
+}
+.oc-branch {
+  width: 2px;
+  height: 18px;
+  background: var(--medium-blue);
+  margin: 0 auto;
+}
+.oc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  position: relative;
+}
+/* Horizontal branch line connecting all department columns */
+.oc-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 2px;
+  background: var(--medium-blue);
+  left: calc((100% - 2rem) / 6);
+  right: calc((100% - 2rem) / 6);
+}
+.oc-dept {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 18px;
+  position: relative;
+}
+/* Vertical drop from horizontal branch into each department */
+.oc-dept::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 18px;
+  background: var(--medium-blue);
+  transform: translateX(-50%);
+}
+/* Line from director down to staff members */
+.oc-dept .oc-director {
+  position: relative;
+}
+.oc-dept .oc-director::after {
+  content: "";
+  position: absolute;
+  bottom: -0.6rem;
+  left: 50%;
+  width: 2px;
+  height: 0.6rem;
+  background: var(--medium-blue);
+  transform: translateX(-50%);
+}
+.oc-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  padding-top: 0.35rem;
+  border-top: 2px solid var(--medium-blue);
+}
+.oc-qa-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+  padding-top: 20px;
+  position: relative;
+}
+/* Dashed connector for QA gate */
+.oc-qa-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--amber) 0 4px,
+    transparent 4px 8px
+  );
 }
 
 /* === How It Works === */
@@ -1061,6 +1194,9 @@ pre {
   .numbers-grid { gap: 1.5rem; }
   .number-value { font-size: 1.5rem; }
 
+  /* Org chart */
+  .oc-grid { grid-template-columns: 1fr; }
+
   /* Problem */
   .problem-stats { grid-template-columns: 1fr; }
 
@@ -1108,5 +1244,5 @@ pre {
   .container { max-width: 100%; padding: 0; }
   a { color: #000; text-decoration: underline; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
-  .mermaid-container { page-break-inside: avoid; }
+  .org-chart { page-break-inside: avoid; }
 }

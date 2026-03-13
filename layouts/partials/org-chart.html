@@ -1,39 +1,45 @@
-<div class="mermaid-container">
-  <pre class="mermaid">
-graph TD
-    Board["Board of Directors&lt;br/&gt;&lt;i&gt;Shareholder Gate&lt;/i&gt;"]
-    CDAIO["CDAIO&lt;br/&gt;&lt;i&gt;The Orchestrator&lt;/i&gt;"]
-    CoS["Chief of Staff&lt;br/&gt;&amp; Operations"]
-    HGov["Head of&lt;br/&gt;Data Governance"]
-    HAI["Head of AI&lt;br/&gt;&amp; Analytics"]
-    Exec["Exec Comms"]
-    PM["Program Mgr"]
-    Steward["Data Steward"]
-    Custodian["Data Custodian"]
-    Compliance["Compliance Officer"]
-    Eng["Data Engineer"]
-    AIML["AI/ML Lead"]
-    UC["Use Case Lead"]
-    Analyst["Data Analyst"]
-    Arch["Data &amp; AI Architect"]
-    SR["Stakeholder Relations"]
-    QR["Quality Reviewer"]
+<div class="org-chart" role="img" aria-label="CDAIO Office organizational chart showing 17 agents plus Board oversight">
+  <!-- Leadership -->
+  <div class="oc-leadership">
+    <div class="oc-node oc-board">Board of Directors<span class="oc-sub">Shareholder Gate</span></div>
+    <div class="oc-line"></div>
+    <div class="oc-node oc-cdaio">CDAIO<span class="oc-sub">The Orchestrator</span></div>
+  </div>
 
-    Board -->|reviews| CDAIO
-    CDAIO --> CoS
-    CDAIO --> HGov
-    CDAIO --> HAI
-    CoS --> Exec
-    CoS --> PM
-    CoS --> SR
-    HGov --> Steward
-    HGov --> Custodian
-    HGov --> Compliance
-    HAI --> Eng
-    HAI --> AIML
-    HAI --> UC
-    HAI --> Analyst
-    HAI --> Arch
-    CDAIO -.->|QA gate| QR
-  </pre>
+  <div class="oc-branch"></div>
+
+  <!-- Departments -->
+  <div class="oc-grid">
+    <div class="oc-dept">
+      <div class="oc-node oc-director">Chief of Staff<span class="oc-sub">& Operations</span></div>
+      <div class="oc-members">
+        <span class="oc-node oc-staff">Exec Comms</span>
+        <span class="oc-node oc-staff">Program Mgr</span>
+        <span class="oc-node oc-staff">Stakeholder Relations</span>
+      </div>
+    </div>
+    <div class="oc-dept">
+      <div class="oc-node oc-director">Head of Data Governance</div>
+      <div class="oc-members">
+        <span class="oc-node oc-staff">Data Steward</span>
+        <span class="oc-node oc-staff">Data Custodian</span>
+        <span class="oc-node oc-staff">Compliance Officer</span>
+      </div>
+    </div>
+    <div class="oc-dept">
+      <div class="oc-node oc-director">Head of AI & Analytics</div>
+      <div class="oc-members">
+        <span class="oc-node oc-staff">Data & AI Architect</span>
+        <span class="oc-node oc-staff">Data Engineer</span>
+        <span class="oc-node oc-staff">AI/ML Lead</span>
+        <span class="oc-node oc-staff">Use Case Lead</span>
+        <span class="oc-node oc-staff">Data Analyst</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QA Gate -->
+  <div class="oc-qa-row">
+    <div class="oc-node oc-qa">Quality Reviewer<span class="oc-sub">QA Gate &mdash; reviews all deliverables</span></div>
+  </div>
 </div>

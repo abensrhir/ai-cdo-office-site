@@ -30,29 +30,5 @@
       });
     });
   </script>
-  {{ if .Store.Get "hasMermaid" }}
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'base',
-      themeVariables: {
-        primaryColor: '#E8EDF5',
-        primaryTextColor: '#1B2A4A',
-        primaryBorderColor: '#2D4A7A',
-        lineColor: '#2D4A7A',
-        secondaryColor: '#F8F9FA',
-        tertiaryColor: '#E8EDF5',
-        fontSize: '16px'
-      },
-      flowchart: {
-        nodeSpacing: 20,
-        rankSpacing: 50,
-        curve: 'basis',
-        padding: 12
-      }
-    });
-  </script>
-  {{ end }}
 </body>
 </html>
