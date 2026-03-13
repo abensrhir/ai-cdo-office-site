@@ -13,6 +13,16 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
+  <!-- Terminal player (loaded globally — only runs if .terminal-player elements exist) -->
+  {{ with resources.Get "js/terminal-player.js" }}
+    {{ if hugo.IsDevelopment }}
+      <script src="{{ .RelPermalink }}" defer></script>
+    {{ else }}
+      {{ with . | minify | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+      {{ end }}
+    {{ end }}
+  {{ end }}
   <!-- Shared copy button handler -->
   <script>
     document.querySelectorAll('[data-copy]').forEach(function(btn) {
