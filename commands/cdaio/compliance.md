@@ -40,8 +40,7 @@ Instruct them to:
 2. Assess current compliance state across each regulation
 3. Identify gaps and assign risk ratings (High/Medium/Low)
 4. Produce a prioritized remediation checklist
-5. If `generators/compliance-checklist/generate.js` exists, produce formatted output
-6. Otherwise, produce a structured markdown compliance assessment
+5. Produce a DOCX compliance checklist (read `shared/docx-blueprint.md` for patterns)
 
 ### 4. Completion
 

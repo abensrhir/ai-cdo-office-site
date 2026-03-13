@@ -1,0 +1,283 @@
+{
+  "title": "AI Maturity Assessment \u2014 Meridian Healthcare",
+  "badge": "Single Agent",
+  "agents": [
+    "Head of AI & Analytics"
+  ],
+  "steps": [
+    {
+      "type": "command",
+      "text": "/cdaio:init",
+      "speed": 72
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-green\">Created context/client-context.md</span>  \u2190 fill in your organization details",
+        "<span class=\"hl-green\">Created context/</span>                   \u2190 add supporting docs (PPTX, PDF, XLSX)",
+        "<span class=\"hl-green\">Created deliverables/</span>              \u2190 agents save output here",
+        ""
+      ],
+      "delay": 144
+    },
+    {
+      "type": "pause",
+      "duration": 1080
+    },
+    {
+      "type": "command",
+      "text": "cat context/client-context.md",
+      "speed": 55
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\"># Client Context</span>",
+        "",
+        "<span class=\"hl-dim\">## Organization</span>",
+        "- <span class=\"hl-heading\">Company:</span> Meridian Healthcare",
+        "- <span class=\"hl-heading\">Industry:</span> Healthcare (hospital network + diagnostics)",
+        "- <span class=\"hl-heading\">Revenue:</span> $520M | 2,100 employees | 8 facilities",
+        "- <span class=\"hl-heading\">Geography:</span> US Midwest",
+        "",
+        "<span class=\"hl-dim\">## Data & AI Maturity</span>",
+        "- <span class=\"hl-heading\">Data team:</span> 12 people (centralized under CIO)",
+        "- <span class=\"hl-heading\">Platforms:</span> On-prem SQL Server, Azure migration in progress",
+        "- <span class=\"hl-heading\">AI models in production:</span> 2 (patient readmission, coding assist)",
+        "- <span class=\"hl-heading\">Governance:</span> No formal framework; HIPAA compliance reactive",
+        "",
+        "<span class=\"hl-dim\">## Current Priorities</span>",
+        "- Board wants an AI strategy by Q2",
+        "- Clinical NLP pilot stalled \u2014 no MLOps",
+        "- Regulatory audit (EU AI Act readiness) in 6 months",
+        ""
+      ],
+      "delay": 90
+    },
+    {
+      "type": "pause",
+      "duration": 900
+    },
+    {
+      "type": "command",
+      "text": "ls context/",
+      "speed": 55
+    },
+    {
+      "type": "output",
+      "lines": [
+        "client-context.md",
+        "current-it-budget-2025.xlsx",
+        "hipaa-audit-findings.pdf",
+        "clinical-nlp-pilot-report.docx",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "command",
+      "text": "/cdaio:assess",
+      "speed": 72
+    },
+    {
+      "type": "pause",
+      "duration": 900
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-dim\">Activating Head of AI & Analytics...</span>",
+        "<span class=\"hl-dim\">Reading context/client-context.md</span>",
+        "<span class=\"hl-dim\">Reading context/clinical-nlp-pilot-report.docx</span>",
+        "<span class=\"hl-dim\">Reading context/hipaa-audit-findings.pdf</span>",
+        "<span class=\"hl-dim\">Loading config/ai-maturity.yml (6 dimensions, 24 subdimensions)</span>",
+        "<span class=\"hl-dim\">Loading config/ai-benchmarks.yml (healthcare peer benchmarks)</span>",
+        ""
+      ],
+      "delay": 180
+    },
+    {
+      "type": "output",
+      "lines": [
+        "I've reviewed your context files and supporting documents. Before I",
+        "score the assessment, one question:",
+        "",
+        "<span class=\"hl-heading\">Do you have a dedicated AI/ML budget line, or does AI spending</span>",
+        "<span class=\"hl-heading\">come out of the general IT budget?</span>",
+        ""
+      ],
+      "delay": 126
+    },
+    {
+      "type": "pause",
+      "duration": 1440
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-dim\">User:</span> General IT budget \u2014 around $180K for AI last year, no formal line item.",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 1080
+    },
+    {
+      "type": "output",
+      "lines": [
+        "That confirms what I suspected from the budget spreadsheet. Let me",
+        "run the full assessment.",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">AI/Data Maturity Assessment \u2014 Meridian Healthcare</span>",
+        "<span class=\"hl-dim\">Healthcare | 2,100 employees | $520M revenue | US Midwest</span>",
+        "<span class=\"hl-dim\">\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501</span>",
+        ""
+      ],
+      "delay": 144
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Dimension Scores (1-5 scale)</span>",
+        "",
+        "  Dimension                  Score   Industry Avg   Rating",
+        "  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500  \u2500\u2500\u2500\u2500\u2500   \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "  Strategy & Ambition         2.3        2.8        <span class=\"hl-amber\">Developing</span>",
+        "  Data & Technology            2.7        3.1        <span class=\"hl-amber\">Developing</span>",
+        "  Talent & Capabilities        1.9        2.6        <span class=\"hl-red\">Initial</span>",
+        "  Governance & Responsible AI  1.6        2.4        <span class=\"hl-red\">Initial</span>",
+        "  Use Case Development         2.1        2.9        <span class=\"hl-amber\">Developing</span>",
+        "  Ecosystem & Innovation       2.4        2.7        <span class=\"hl-amber\">Developing</span>",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "output",
+      "lines": [
+        "  <span class=\"hl-heading\">Overall Maturity: 2.2 / 5.0</span>  (Healthcare avg: 2.8)",
+        "  Performance tier: <span class=\"hl-amber\">Mainstream \u2014 bottom 40th percentile</span>",
+        ""
+      ],
+      "delay": 180
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Top 3 Gaps (based on your context and HIPAA audit findings)</span>",
+        "",
+        "  1. <span class=\"hl-red\">Governance & Responsible AI</span> (gap: -1.8 vs leaders)",
+        "     Your HIPAA audit flagged 4 unresolved findings related to data",
+        "     access controls. No AI-specific governance exists. EU AI Act",
+        "     readiness audit in 6 months makes this urgent.",
+        "",
+        "  2. <span class=\"hl-red\">Talent & Capabilities</span> (gap: -1.7 vs leaders)",
+        "     12-person team = 0.6% of workforce (benchmark: 1.4%). Zero ML",
+        "     engineers explains why the clinical NLP pilot stalled.",
+        "",
+        "  3. <span class=\"hl-amber\">Use Case Development</span> (gap: -1.4 vs leaders)",
+        "     2 models in production vs 15+ for healthcare leaders. The NLP",
+        "     pilot has been in POC for 8 months \u2014 no MLOps to graduate it.",
+        ""
+      ],
+      "delay": 90
+    },
+    {
+      "type": "pause",
+      "duration": 900
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Quick Win Recommendations (90-day horizon)</span>",
+        "",
+        "  1. Hire AI/ML Lead + 2 ML engineers ($420K annual investment)",
+        "  2. Deploy AI governance framework aligned to HIPAA + EU AI Act",
+        "  3. Unblock clinical NLP pilot: implement MLflow, target production",
+        "     in 6 weeks \u2192 $1.2M annual savings in medical coding efficiency",
+        ""
+      ],
+      "delay": 90
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-dim\">\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501</span>",
+        "<span class=\"hl-green\">Deliverables saved to deliverables/assess-2026-03-13/</span>",
+        ""
+      ],
+      "delay": 144
+    },
+    {
+      "type": "command",
+      "text": "ls deliverables/assess-2026-03-13/",
+      "speed": 55
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-green\">maturity-scorecard.xlsx</span>    5-tab workbook (scores, benchmarks, gaps)",
+        "<span class=\"hl-green\">assessment-report.md</span>      Full narrative with evidence per subdimension",
+        "<span class=\"hl-green\">gap-analysis.md</span>           Prioritized recommendations with cost estimates",
+        ""
+      ],
+      "delay": 126
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-dim\">What's next?</span>",
+        "  \u2022 /cdaio:strategy  \u2192 Expand into a full AI Strategy Sprint",
+        "  \u2022 /cdaio:benchmark \u2192 Deep-dive industry comparison",
+        "  \u2022 /cdaio:use-cases \u2192 Identify AI opportunities based on maturity"
+      ],
+      "delay": 108
+    }
+  ],
+  "gallery": [
+    {
+      "src": "demo/screenshots/assess-scorecard.webp",
+      "alt": "Maturity scorecard spreadsheet showing 6-dimension scores with industry benchmarks",
+      "caption": "maturity-scorecard.xlsx"
+    },
+    {
+      "src": "demo/screenshots/assess-radar.webp",
+      "alt": "Radar chart comparing Meridian Healthcare maturity vs healthcare industry average",
+      "caption": "Dimension radar chart"
+    }
+  ],
+  "downloads": [
+    {
+      "src": "demo/downloads/maturity-scorecard.xlsx",
+      "label": "maturity-scorecard.xlsx"
+    },
+    {
+      "src": "demo/downloads/gap-analysis.xlsx",
+      "label": "gap-analysis.xlsx"
+    }
+  ]
+}

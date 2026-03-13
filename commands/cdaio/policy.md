@@ -40,8 +40,7 @@ Instruct them to produce a data governance policy:
 2. Cover all standard governance domains (or the specific scope requested)
 3. Include roles and responsibilities (Data Owners, Stewards, Custodians)
 4. Address AI/GenAI governance (acceptable use, model governance, shadow AI)
-5. If `generators/policy/generate.js` exists, produce DOCX output
-6. Otherwise, produce a structured markdown policy document
+5. Produce a DOCX policy document (read `shared/docx-blueprint.md` for patterns)
 
 ### 4. Completion
 

@@ -1,0 +1,16 @@
+<div class="terminal-player" id="{{ .id }}" data-src="{{ .src | absURL }}">
+  <div class="tp-chrome">
+    <span class="tp-dot tp-dot-red"></span>
+    <span class="tp-dot tp-dot-yellow"></span>
+    <span class="tp-dot tp-dot-green"></span>
+    <span class="tp-title"></span>
+  </div>
+  <div class="tp-body">
+    <pre class="tp-output" role="log" aria-live="off" aria-label="Terminal session demo"></pre>
+  </div>
+  <div class="tp-controls">
+    <button class="tp-play" aria-label="Play demo">Play</button>
+    <button class="tp-skip" aria-label="Skip to end" hidden>Skip</button>
+  </div>
+  <div class="tp-gallery" hidden></div>
+</div>

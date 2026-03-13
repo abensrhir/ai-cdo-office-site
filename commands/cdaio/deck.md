@@ -40,8 +40,7 @@ Instruct them to:
 1. Structure the narrative using the pyramid principle (conclusion first)
 2. Design the slide flow following MBB conventions
 3. Include data visualizations where appropriate
-4. If `generators/board-deck/generate.js` exists, produce PPTX output
-5. Otherwise, produce a structured markdown deck outline with slide-by-slide content
+4. Produce a PPTX board deck (read `shared/pptx-blueprint.md` for patterns)
 
 ### 4. Completion
 

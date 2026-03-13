@@ -41,8 +41,7 @@ Instruct them to:
 2. Compare AI investment levels (% of revenue) from `config/ai-benchmarks.yml`
 3. Identify what leaders in the industry are doing differently
 4. Quantify the cost of inaction
-5. If `generators/scorecard/generate.py` exists, produce XLSX scorecard
-6. Otherwise, produce a structured markdown benchmark report
+5. Produce an XLSX scorecard (read `shared/xlsx-blueprint.md` for patterns)
 
 ### 4. Completion
 

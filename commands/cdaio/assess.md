@@ -40,8 +40,7 @@ Instruct them to run a focused maturity assessment (not the full strategy sprint
 2. Score each subdimension on a 1-5 scale with evidence
 3. Benchmark against industry peers using `config/ai-benchmarks.yml`
 4. Identify top 3 gaps between current state and industry leaders
-5. If `generators/maturity-assessment/generate.py` exists, produce XLSX output
-6. Otherwise, produce a structured markdown assessment
+5. Produce an XLSX maturity assessment (read `shared/xlsx-blueprint.md` for patterns)
 
 ### 4. Completion
 

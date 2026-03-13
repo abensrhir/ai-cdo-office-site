@@ -1,0 +1,32 @@
+{{ define "main" }}
+<article class="page-content">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="page-description">{{ .Description }}</p>
+
+    <div class="demo-tabs">
+      <input type="radio" name="demo-tab" id="demo-tab-assess" checked>
+      <input type="radio" name="demo-tab" id="demo-tab-strategy">
+      <input type="radio" name="demo-tab" id="demo-tab-board">
+
+      <div class="tab-labels">
+        <label for="demo-tab-assess">Maturity Assessment</label>
+        <label for="demo-tab-strategy">AI Strategy Sprint</label>
+        <label for="demo-tab-board">Board Meeting Prep</label>
+      </div>
+
+      <div class="demo-panel" id="panel-demo-assess">
+        {{ partial "terminal-player.html" (dict "src" "demo/assess.json" "id" "demo-assess") }}
+      </div>
+      <div class="demo-panel" id="panel-demo-strategy">
+        {{ partial "terminal-player.html" (dict "src" "demo/strategy.json" "id" "demo-strategy") }}
+      </div>
+      <div class="demo-panel" id="panel-demo-board">
+        {{ partial "terminal-player.html" (dict "src" "demo/board-prep.json" "id" "demo-board") }}
+      </div>
+    </div>
+
+  </div>
+</article>
+
+{{ end }}

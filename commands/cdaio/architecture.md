@@ -40,8 +40,7 @@ Instruct them to:
 2. Design target-state architecture aligned with strategic priorities
 3. Benchmark technology components and recommend platform choices
 4. Build phased migration roadmap with cost estimates
-5. If `generators/architecture/generate.js` exists, produce PPTX blueprint
-6. Otherwise, produce a structured markdown architecture document
+5. Produce a PPTX architecture blueprint (read `shared/pptx-blueprint.md` for patterns)
 
 ### 4. Completion
 

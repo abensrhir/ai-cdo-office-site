@@ -38,8 +38,7 @@ Instruct them to:
 2. Identify all relevant stakeholder roles
 3. Assign R/A/C/I for each activity-stakeholder intersection
 4. Flag any activities with missing Accountable or multiple Accountables
-5. If `generators/raci/generate.py` exists, produce XLSX output
-6. Otherwise, produce a structured markdown RACI table
+5. Produce an XLSX RACI matrix (read `shared/xlsx-blueprint.md` for patterns)
 
 ### 4. Completion
 

@@ -1,0 +1,213 @@
+{
+  "title": "AI Strategy Sprint \u2014 Meridian Healthcare",
+  "badge": "Multi-Agent Playbook",
+  "agents": [
+    "Head of AI & Analytics",
+    "Data & AI Architect",
+    "AI/ML Lead",
+    "Use Case Lead",
+    "Data Analyst",
+    "Quality Reviewer"
+  ],
+  "steps": [
+    {
+      "type": "command",
+      "text": "ls context/",
+      "speed": 55
+    },
+    {
+      "type": "output",
+      "lines": [
+        "client-context.md              \u2190 Meridian Healthcare profile",
+        "current-it-budget-2025.xlsx",
+        "hipaa-audit-findings.pdf",
+        "clinical-nlp-pilot-report.docx",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "command",
+      "text": "/cdaio:strategy",
+      "speed": 72
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-dim\">Starting AI Strategy Sprint playbook...</span>",
+        "<span class=\"hl-dim\">Reading context/client-context.md \u2192 Meridian Healthcare, $520M, healthcare</span>",
+        "<span class=\"hl-dim\">Reading context/current-it-budget-2025.xlsx \u2192 $180K AI spend identified</span>",
+        "<span class=\"hl-dim\">Activating 6 agents: Head of AI \u2192 Architect \u2192 AI/ML \u2192 Use Case \u2192 Analyst \u2192 QA</span>",
+        ""
+      ],
+      "delay": 180
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Phase 1: Assessment (Head of AI & Analytics)</span>",
+        "<span class=\"hl-dim\">Scoring maturity across 6 dimensions using context + supporting docs...</span>",
+        "",
+        "  Overall maturity: <span class=\"hl-amber\">2.2 / 5.0</span> (mainstream tier, bottom 40th pctl)",
+        "  Critical gaps: Governance (-1.8), Talent (-1.7), Use Cases (-1.4)",
+        "  HIPAA audit findings: 4 unresolved items flagged in context docs",
+        "  Target state: <span class=\"hl-green\">3.5 / 5.0</span> within 24 months",
+        ""
+      ],
+      "delay": 126
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Phase 2: Architecture Blueprint (Data & AI Architect)</span>",
+        "<span class=\"hl-dim\">Designing target-state data & AI platform for Meridian...</span>",
+        "<span class=\"hl-dim\">Referenced: current-it-budget-2025.xlsx for existing stack inventory</span>",
+        "",
+        "  Current: On-prem SQL Server, partial Azure migration, no ML platform",
+        "  Target:  Azure Synapse + Databricks + MLflow + Airflow",
+        "  Investment: $1.8M over 18 months (3 phases, aligned to Azure migration)",
+        "  Key constraint: HIPAA-compliant architecture (PHI data residency)",
+        ""
+      ],
+      "delay": 126
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Phase 3: Use Case Portfolio (Use Case Lead)</span>",
+        "<span class=\"hl-dim\">Scoring 12 AI use cases on impact \u00d7 feasibility for healthcare...</span>",
+        "<span class=\"hl-dim\">Referenced: clinical-nlp-pilot-report.docx for NLP pilot status</span>",
+        "",
+        "  #   Use Case                     Impact  Feasibility  Score",
+        "  \u2500   \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2500\u2500\u2500\u2500\u2500\u2500  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500  \u2500\u2500\u2500\u2500\u2500",
+        "  1   Clinical NLP for coding       <span class=\"hl-green\">High</span>    <span class=\"hl-green\">High</span>         <span class=\"hl-green\">9.2</span>   \u2190 unblock stalled pilot",
+        "  2   Predictive patient no-show    <span class=\"hl-green\">High</span>    <span class=\"hl-green\">High</span>         <span class=\"hl-green\">8.7</span>",
+        "  3   Drug interaction detection    <span class=\"hl-green\">High</span>    <span class=\"hl-amber\">Med</span>          <span class=\"hl-amber\">7.8</span>",
+        "  4   Supply chain optimization     <span class=\"hl-amber\">Med</span>     <span class=\"hl-green\">High</span>         <span class=\"hl-amber\">7.4</span>",
+        "  5   Claims processing automation  <span class=\"hl-amber\">Med</span>     <span class=\"hl-amber\">Med</span>          <span class=\"hl-amber\">6.9</span>",
+        ""
+      ],
+      "delay": 90
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Phase 4: Investment Case (Head of AI & Analytics)</span>",
+        "<span class=\"hl-dim\">Building 3-scenario financial model for Meridian board...</span>",
+        "<span class=\"hl-dim\">Referenced: current-it-budget-2025.xlsx for baseline spend</span>",
+        "",
+        "  Scenario       Investment   Year 3 Return   NPV       Payback",
+        "  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2500\u2500\u2500\u2500\u2500\u2500    \u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "  Conservative   $3.4M        $5.8M           $2.0M     22 mo",
+        "  Base           $4.1M        $9.2M           $4.4M     18 mo",
+        "  Aggressive     $4.8M        $13.5M          $7.5M     14 mo",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Phase 5: Quality Review</span>",
+        "<span class=\"hl-dim\">Quality Reviewer checking all deliverables against MBB standards...</span>",
+        "",
+        "  \u2713 Strategy document: Pyramid principle applied, all claims sourced",
+        "  \u2713 Investment case: Formulas verified, scenarios internally consistent",
+        "  \u2713 Use case portfolio: Business sponsors named, NLP pilot data validated",
+        "  \u2713 Architecture: HIPAA constraints addressed, phased to Azure migration",
+        "",
+        "  <span class=\"hl-green\">All quality gates passed.</span>",
+        ""
+      ],
+      "delay": 126
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-dim\">\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501</span>",
+        "<span class=\"hl-green\">Sprint complete. 9 deliverables generated:</span>",
+        ""
+      ],
+      "delay": 144
+    },
+    {
+      "type": "command",
+      "text": "ls deliverables/strategy-2026-03-13/",
+      "speed": 55
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-green\">ai-strategy.docx</span>           25-page strategy (Meridian-specific)",
+        "<span class=\"hl-green\">investment-case.xlsx</span>        6-tab model ($3.4M-$4.8M scenarios)",
+        "<span class=\"hl-green\">maturity-scorecard.xlsx</span>     Current 2.2 \u2192 target 3.5 assessment",
+        "<span class=\"hl-green\">use-case-portfolio.xlsx</span>     12 scored use cases for healthcare",
+        "<span class=\"hl-green\">architecture-blueprint.pptx</span> Azure-based platform (HIPAA-compliant)",
+        "<span class=\"hl-green\">implementation-roadmap.md</span>   3-phase, 24-month plan",
+        "<span class=\"hl-green\">talent-plan.md</span>             Hiring roadmap (12 \u2192 28 FTE)",
+        "<span class=\"hl-green\">governance-framework.md</span>    AI governance aligned to HIPAA + EU AI Act",
+        "<span class=\"hl-green\">executive-summary.md</span>       1-page board-ready brief"
+      ],
+      "delay": 90
+    }
+  ],
+  "gallery": [
+    {
+      "src": "demo/screenshots/strategy-doc.webp",
+      "alt": "AI Strategy document cover page with executive summary for Meridian Healthcare",
+      "caption": "ai-strategy.docx"
+    },
+    {
+      "src": "demo/screenshots/strategy-investment.webp",
+      "alt": "Investment case spreadsheet showing 3-scenario NPV analysis",
+      "caption": "investment-case.xlsx"
+    },
+    {
+      "src": "demo/screenshots/strategy-architecture.webp",
+      "alt": "Target-state architecture blueprint slide \u2014 Azure-based HIPAA-compliant platform",
+      "caption": "architecture-blueprint.pptx"
+    }
+  ],
+  "downloads": [
+    {
+      "src": "demo/downloads/investment-case.xlsx",
+      "label": "investment-case.xlsx"
+    },
+    {
+      "src": "demo/downloads/use-case-portfolio.xlsx",
+      "label": "use-case-portfolio.xlsx"
+    },
+    {
+      "src": "demo/downloads/ai-strategy-summary.pptx",
+      "label": "ai-strategy-summary.pptx"
+    }
+  ]
+}

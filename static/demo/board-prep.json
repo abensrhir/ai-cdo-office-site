@@ -1,0 +1,260 @@
+{
+  "title": "Board Meeting Prep \u2014 Meridian Healthcare Q2 2026",
+  "badge": "Multi-Agent Playbook",
+  "agents": [
+    "CDO",
+    "Exec Comms Lead",
+    "Data Analyst",
+    "Chief of Staff",
+    "Quality Reviewer"
+  ],
+  "steps": [
+    {
+      "type": "command",
+      "text": "ls context/",
+      "speed": 55
+    },
+    {
+      "type": "output",
+      "lines": [
+        "client-context.md              \u2190 Meridian Healthcare profile",
+        "current-it-budget-2025.xlsx",
+        "hipaa-audit-findings.pdf",
+        "clinical-nlp-pilot-report.docx",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "command",
+      "text": "ls deliverables/",
+      "speed": 55
+    },
+    {
+      "type": "output",
+      "lines": [
+        "assess-2026-03-13/    \u2190 previous maturity assessment",
+        "strategy-2026-03-13/  \u2190 previous AI strategy sprint",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "command",
+      "text": "/cdaio:board-prep",
+      "speed": 72
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-dim\">Starting Board Meeting Prep playbook...</span>",
+        "<span class=\"hl-dim\">Reading context/client-context.md \u2192 Meridian Healthcare</span>",
+        "<span class=\"hl-dim\">Reading deliverables/strategy-2026-03-13/ \u2192 prior strategy outputs</span>",
+        "<span class=\"hl-dim\">Reading deliverables/assess-2026-03-13/ \u2192 maturity scores</span>",
+        "<span class=\"hl-dim\">Activating 5 agents: CDO \u2192 Exec Comms \u2192 Analyst \u2192 Chief of Staff \u2192 QA</span>",
+        ""
+      ],
+      "delay": 180
+    },
+    {
+      "type": "output",
+      "lines": [
+        "I see previous strategy and assessment deliverables in your project.",
+        "I'll build on those. One question:",
+        "",
+        "<span class=\"hl-heading\">Has the board seen the maturity assessment, or is this</span>",
+        "<span class=\"hl-heading\">their first exposure to the AI program status?</span>",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 1260
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-dim\">User:</span> First exposure. They asked the CEO for \"an AI update\" \u2014 we need to",
+        "<span class=\"hl-dim\">      set the baseline and make the investment ask.</span>",
+        ""
+      ],
+      "delay": 90
+    },
+    {
+      "type": "pause",
+      "duration": 900
+    },
+    {
+      "type": "output",
+      "lines": [
+        "Good \u2014 a baseline-setting board pack. I'll frame it as",
+        "\"here's where we are, here's the opportunity, here's the ask.\"",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Step 1: Strategic Framing (CDO)</span>",
+        "<span class=\"hl-dim\">Setting board narrative from prior strategy + assessment...</span>",
+        "",
+        "  Narrative: \"From Reactive to Predictive Healthcare\"",
+        "  Key message 1: AI maturity at 2.2/5.0 \u2014 below healthcare average (2.8)",
+        "  Key message 2: $9.2M base-case return on $4.1M investment (2.2x NPV)",
+        "  Key message 3: Clinical NLP quick win: $1.2M annual savings",
+        "  Ask: Approve $4.1M 3-year AI investment (Phase 1: $1.2M this fiscal year)",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Step 2: Data & Benchmarks (Data Analyst)</span>",
+        "<span class=\"hl-dim\">Pulling Meridian KPIs and healthcare peer comparisons...</span>",
+        "",
+        "  Meridian vs Healthcare Leaders:",
+        "    AI spend / revenue:     0.03%   (leaders: 0.8%)     <span class=\"hl-red\">26x gap</span>",
+        "    Models in production:     2       (leaders: 15+)      <span class=\"hl-red\">Behind</span>",
+        "    Data team / headcount:   0.6%    (leaders: 1.4%)     <span class=\"hl-amber\">Below avg</span>",
+        "    POC-to-prod cycle:       8 mo    (leaders: 6 wk)     <span class=\"hl-red\">Behind</span>",
+        "    Governance maturity:     1.6/5   (leaders: 4.2/5)    <span class=\"hl-red\">Critical</span>",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Step 3: Deck Production (Exec Comms Lead)</span>",
+        "<span class=\"hl-dim\">Building board presentation using SCR format, McKinsey chart standards...</span>",
+        "",
+        "  Slide 1:  Executive Summary \u2014 Situation, Complication, Resolution",
+        "  Slide 2:  Maturity Baseline \u2014 6 dimensions vs healthcare peers",
+        "  Slide 3:  The Opportunity \u2014 12 scored use cases, top 5 highlighted",
+        "  Slide 4:  Quick Win: Clinical NLP \u2014 $1.2M impact, 6-week timeline",
+        "  Slide 5:  Investment Ask \u2014 3-scenario model, base case $4.1M/3yr",
+        "  Slide 6:  Architecture & Roadmap \u2014 3 phases, HIPAA-compliant",
+        "  Slide 7:  Risk & Governance \u2014 EU AI Act readiness plan",
+        "  Slide 8:  Next Steps & Timeline \u2014 Q2 milestones + board cadence",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Step 4: Operational Readiness (Chief of Staff)</span>",
+        "<span class=\"hl-dim\">Preparing briefing materials and anticipated board questions...</span>",
+        "",
+        "  \u2713 Board pre-read: 2-page executive brief (sent 5 days before)",
+        "  \u2713 Anticipated Q&A: 12 questions with prepared responses, including:",
+        "     \u2014 \"Why should we invest in AI when our margins are under pressure?\"",
+        "     \u2014 \"What happens if the EU AI Act penalties apply to our diagnostics?\"",
+        "     \u2014 \"How do we know the $9.2M return estimate isn't inflated?\"",
+        "  \u2713 Backup slides: 5 appendix slides for deep-dive requests",
+        "  \u2713 Talking points: CDO speaking notes per slide",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-heading\">Step 5: Quality Gate (Quality Reviewer)</span>",
+        "",
+        "  \u2713 Pyramid principle: All slides lead with insight, not data",
+        "  \u2713 Financial claims: Cross-referenced to investment-case.xlsx",
+        "  \u2713 Maturity scores: Match assess-2026-03-13/maturity-scorecard.xlsx",
+        "  \u2713 Regulatory claims: HIPAA + EU AI Act references verified",
+        "  \u2713 Board-appropriate: No jargon, all abbreviations defined",
+        "",
+        "  <span class=\"hl-green\">Board pack approved. Ready for distribution.</span>",
+        ""
+      ],
+      "delay": 108
+    },
+    {
+      "type": "pause",
+      "duration": 720
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-dim\">\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501</span>",
+        "<span class=\"hl-green\">Board prep complete. 6 deliverables saved:</span>",
+        ""
+      ],
+      "delay": 144
+    },
+    {
+      "type": "command",
+      "text": "ls deliverables/board-prep-2026-03-13/",
+      "speed": 55
+    },
+    {
+      "type": "output",
+      "lines": [
+        "<span class=\"hl-green\">board-presentation.pptx</span>    8-slide deck (Meridian-specific)",
+        "<span class=\"hl-green\">executive-brief.md</span>         2-page pre-read for board members",
+        "<span class=\"hl-green\">kpi-scorecard.xlsx</span>         Maturity + peer benchmarks",
+        "<span class=\"hl-green\">qa-responses.md</span>            12 anticipated board questions + answers",
+        "<span class=\"hl-green\">talking-points.md</span>          CDO speaking notes per slide",
+        "<span class=\"hl-green\">appendix-slides.pptx</span>      5 backup deep-dive slides"
+      ],
+      "delay": 90
+    }
+  ],
+  "gallery": [
+    {
+      "src": "demo/screenshots/board-deck.webp",
+      "alt": "Board presentation slide showing executive summary with maturity baseline for Meridian Healthcare",
+      "caption": "board-presentation.pptx"
+    },
+    {
+      "src": "demo/screenshots/board-scorecard.webp",
+      "alt": "KPI scorecard spreadsheet comparing Meridian vs healthcare leaders",
+      "caption": "kpi-scorecard.xlsx"
+    }
+  ],
+  "downloads": [
+    {
+      "src": "demo/downloads/board-presentation.pptx",
+      "label": "board-presentation.pptx"
+    },
+    {
+      "src": "demo/downloads/kpi-scorecard.xlsx",
+      "label": "kpi-scorecard.xlsx"
+    }
+  ]
+}

@@ -3,7 +3,7 @@ name: Data Governance Steward
 role: governance
 reports_to: Head of Data Governance
 description: "Use when a user needs help with data definitions, data dictionaries, data quality standards, ownership assignment, metadata management, or data lineage documentation."
-tools: [data-dictionary]
+tools: []
 ---
 
 # Data Governance Steward
@@ -106,7 +106,7 @@ I document where each element originates, how it transforms, and where it lands.
 
 ### Step 6: Generate the data dictionary
 
-Using the data-dictionary generator, I produce a structured XLSX workbook with tabs for the dictionary itself, domain summaries, quality rules, and an ownership matrix. Every element is traceable, every definition is business-approved language.
+I produce a structured XLSX workbook with tabs for the dictionary itself, domain summaries, quality rules, and an ownership matrix. Every element is traceable, every definition is business-approved language.
 
 I review every output against the standards in `shared/output-qa-checklist.md`. No placeholder text. No ambiguous definitions. No orphaned elements without owners.
 
@@ -128,7 +128,7 @@ When my work is complete, I present the deliverable with context-aware options:
 **Primary output:**
 - Enterprise Data Dictionary (XLSX) — structured workbook with data elements, definitions, ownership, lineage, quality rules, and classification
 
-**Advisory outputs (no generator needed):**
+**Advisory outputs:**
 - Data domain prioritization recommendations
 - Data quality rule definitions and threshold proposals
 - Data ownership RACI recommendations
@@ -136,17 +136,34 @@ When my work is complete, I present the deliverable with context-aware options:
 - Data lineage mapping guidance
 - Data quality issue root cause analysis
 
-## Tools
+## File Production
 
-### Data Dictionary Generator (XLSX)
-```bash
-if [ -f "generators/data-dictionary/generate.py" ]; then
-  python3 generators/data-dictionary/generate.py input.json deliverables/output.xlsx
-fi
-```
-**Input JSON structure:** Company context, industry, data domains (with elements, definitions, owners, stewards, source systems, data types, quality rules, classification levels).
+When producing the Data Dictionary XLSX, read `shared/xlsx-blueprint.md` for openpyxl patterns and styling. Write a Python script that builds the workbook below.
 
-**Without the generator:** I provide the complete data dictionary content as structured markdown — every element, definition, owner, and quality rule — ready for manual entry into your catalog tool or spreadsheet. For the formatted XLSX with multiple tabs, conditional formatting, and dropdown validations, install the generator from the `generators/` directory.
+### Data Dictionary (XLSX) — 3 tabs
+
+**Tab 1: Dictionary**
+| Column | Header | Type | Notes |
+|--------|--------|------|-------|
+| A | Domain | text | Data domain (Customer, Financial, Product, etc.) |
+| B | Element Name | text | Business name of the data element |
+| C | Definition | text (wrapped) | Plain-English definition, no jargon |
+| D | Data Type | text | String, Integer, Date, Boolean, Decimal |
+| E | Format / Valid Values | text | e.g., "YYYY-MM-DD", "Active/Inactive" |
+| F | Classification | dropdown | Public, Internal, Confidential, Restricted |
+| G | Data Owner | text | Accountable executive |
+| H | Data Steward | text | Operational custodian |
+| I | Source System | text | Authoritative source |
+| J | Quality Rules | text | Measurable thresholds (e.g., "Completeness >= 98%") |
+| K | Refresh Frequency | dropdown | Real-time, Daily, Weekly, Monthly, Quarterly |
+
+- Data validation: Classification dropdown ["Public","Internal","Confidential","Restricted"]
+- Data validation: Refresh dropdown ["Real-time","Daily","Weekly","Monthly","Quarterly"]
+- Conditional formatting: Restricted = Terracotta bg, Confidential = Amber bg, PII fields = Terracotta text
+- Auto-filter on header row, freeze panes at A2
+
+**Tab 2: Domains** — Summary by domain: element count (`=COUNTIF`), owners, quality score
+**Tab 3: Quality Rules** — Rule name, target metric, threshold, measurement frequency, remediation process
 
 ## Working With My Team
 
