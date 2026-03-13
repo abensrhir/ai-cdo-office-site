@@ -1,0 +1,144 @@
+<section class="example-output" aria-labelledby="example-heading">
+  <div class="container">
+    <h2 id="example-heading">What You Get</h2>
+    <p class="section-sub">Real output from single commands and multi-agent playbooks. Markdown + generated PPTX, DOCX, XLSX files.</p>
+
+    <!-- Example tabs -->
+    <div class="example-tabs">
+      <input type="radio" name="example-tab" id="tab-assess" checked>
+      <input type="radio" name="example-tab" id="tab-strategy">
+      <input type="radio" name="example-tab" id="tab-board">
+
+      <div class="tab-labels">
+        <label for="tab-assess">Maturity Assessment</label>
+        <label for="tab-strategy">AI Strategy Sprint</label>
+        <label for="tab-board">Board Meeting Prep</label>
+      </div>
+
+      <!-- Tab 1: Maturity Assessment (single agent) -->
+      <div class="tab-panel" id="panel-assess">
+        <span class="example-badge">Single Agent</span>
+        <div class="example-block">
+          <div class="example-input">
+            <span class="example-label">Input</span>
+            <code>/cdaio:assess healthcare company, 5000 employees, Level 2 maturity</code>
+          </div>
+          <div class="example-result">
+            <span class="example-label">Output (excerpt)</span>
+            <pre class="example-code"><span class="hl-heading">## AI/Data Maturity Assessment</span>
+
+<span class="hl-heading">### Overall Score: 2.3 / 5.0 (Emerging)</span>
+
+<span class="hl-dim">| Dimension              | Score | Status |</span>
+<span class="hl-dim">|------------------------|-------|--------|</span>
+| Data Strategy          |  2.5  | <span class="hl-amber">Amber</span>  |
+| Governance & Quality   |  1.8  | <span class="hl-red">Red</span>    |
+| AI & Analytics         |  2.0  | <span class="hl-amber">Amber</span>  |
+| Architecture           |  3.0  | <span class="hl-green">Green</span>  |
+| Organization & Culture |  2.2  | <span class="hl-amber">Amber</span>  |
+| Value & ROI            |  2.3  | <span class="hl-amber">Amber</span>  |
+
+<span class="hl-heading">### Top 3 Recommendations</span>
+1. Establish data governance council within 30 days
+2. Launch 3 quick-win AI use cases in clinical ops
+3. Hire dedicated data steward for patient data domain
+
+<span class="hl-dim">+ 24-subdimension detail, gap analysis, peer benchmarks,
+  implementation roadmap, and investment case...</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: AI Strategy Sprint (multi-agent playbook) -->
+      <div class="tab-panel" id="panel-strategy">
+        <span class="example-badge example-badge-multi">Multi-Agent Playbook</span>
+        <div class="example-block">
+          <div class="example-input">
+            <span class="example-label">Input</span>
+            <code>/cdaio:strategy fintech company, $500M revenue, Series C, 200 engineers</code>
+          </div>
+          <div class="example-agents">
+            <span class="example-label">Team Activated</span>
+            <div class="agent-chain">
+              <span class="agent-chip">Head of AI</span>
+              <span class="chain-arrow">&rarr;</span>
+              <span class="agent-chip">Data Architect</span>
+              <span class="chain-arrow">&rarr;</span>
+              <span class="agent-chip">AI/ML Lead</span>
+              <span class="chain-arrow">&rarr;</span>
+              <span class="agent-chip">Use Case Lead</span>
+              <span class="chain-arrow">&rarr;</span>
+              <span class="agent-chip">Data Analyst</span>
+              <span class="chain-arrow">&rarr;</span>
+              <span class="agent-chip">Quality Reviewer</span>
+            </div>
+          </div>
+          <div class="example-result">
+            <span class="example-label">Deliverables produced</span>
+            <pre class="example-code"><span class="hl-heading">deliverables/strategy-2026-03-09/</span>
+<span class="hl-dim">├──</span> ai-strategy-document.md        <span class="hl-dim">42 pages</span>
+<span class="hl-dim">│</span>   <span class="hl-dim">Vision, 6 strategic dimensions, 3-year roadmap</span>
+<span class="hl-dim">├──</span> <span class="hl-green">ai-strategy.docx</span>               <span class="hl-dim">generated</span>
+<span class="hl-dim">├──</span> maturity-assessment.md          <span class="hl-dim">18 pages</span>
+<span class="hl-dim">│</span>   <span class="hl-dim">Current state: 2.4/5.0, target state: 3.8/5.0</span>
+<span class="hl-dim">├──</span> <span class="hl-green">maturity-scorecard.xlsx</span>        <span class="hl-dim">generated</span>
+<span class="hl-dim">├──</span> use-case-portfolio.md           <span class="hl-dim">12 pages</span>
+<span class="hl-dim">│</span>   <span class="hl-dim">15 use cases scored on feasibility x impact</span>
+<span class="hl-dim">├──</span> investment-case.md              <span class="hl-dim">8 pages</span>
+<span class="hl-dim">│</span>   <span class="hl-dim">$4.2M investment &rarr; $18.6M value over 3 years (4.4x ROI)</span>
+<span class="hl-dim">├──</span> architecture-blueprint.md       <span class="hl-dim">10 pages</span>
+<span class="hl-dim">│</span>   <span class="hl-dim">Target-state data platform, migration path</span>
+<span class="hl-dim">├──</span> <span class="hl-green">board-presentation.pptx</span>        <span class="hl-dim">15 slides, generated</span>
+<span class="hl-dim">└──</span> board-presentation.md           <span class="hl-dim">slide content</span>
+
+<span class="hl-dim">Total: 6 agents &rarr; 9 deliverables (markdown + PPTX/DOCX/XLSX)</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Board Meeting Prep (multi-agent playbook) -->
+      <div class="tab-panel" id="panel-board">
+        <span class="example-badge example-badge-multi">Multi-Agent Playbook</span>
+        <div class="example-block">
+          <div class="example-input">
+            <span class="example-label">Input</span>
+            <code>/cdaio:board-prep quarterly review, focus on AI ROI and governance gaps</code>
+          </div>
+          <div class="example-agents">
+            <span class="example-label">Team Activated</span>
+            <div class="agent-chain">
+              <span class="agent-chip">CDO</span>
+              <span class="chain-arrow">&rarr;</span>
+              <span class="agent-chip">Exec Comms</span>
+              <span class="chain-arrow">&rarr;</span>
+              <span class="agent-chip">Data Analyst</span>
+              <span class="chain-arrow">&rarr;</span>
+              <span class="agent-chip">Chief of Staff</span>
+              <span class="chain-arrow">&rarr;</span>
+              <span class="agent-chip">Quality Reviewer</span>
+            </div>
+          </div>
+          <div class="example-result">
+            <span class="example-label">Deliverables produced</span>
+            <pre class="example-code"><span class="hl-heading">deliverables/board-prep-2026-03-09/</span>
+<span class="hl-dim">├──</span> <span class="hl-green">board-deck.pptx</span>                <span class="hl-dim">12 slides, generated</span>
+<span class="hl-dim">├──</span> board-deck.md                   <span class="hl-dim">slide content</span>
+<span class="hl-dim">│</span>   <span class="hl-dim">Title, Exec Summary, KPI Dashboard, Initiative</span>
+<span class="hl-dim">│</span>   <span class="hl-dim">Portfolio, Risk Matrix, Budget, Recommendations</span>
+<span class="hl-dim">├──</span> <span class="hl-green">kpi-scorecard.xlsx</span>             <span class="hl-dim">generated</span>
+<span class="hl-dim">├──</span> kpi-scorecard.md                <span class="hl-dim">5 pages</span>
+<span class="hl-dim">│</span>   <span class="hl-dim">7 KPIs with RAG status, trends, and targets</span>
+<span class="hl-dim">├──</span> talking-points.md               <span class="hl-dim">3 pages</span>
+<span class="hl-dim">│</span>   <span class="hl-dim">Slide-by-slide notes, anticipated questions</span>
+<span class="hl-dim">└──</span> diagnostic-report.md            <span class="hl-dim">QA pass</span>
+    <span class="hl-dim">Action title check, MECE validation, data sourcing</span>
+
+<span class="hl-green">&#10003; Quality Reviewer: "Deck passes MBB standards.
+  All action titles are complete sentences.
+  PPTX generated with design system colors."</span></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

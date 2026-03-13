@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="page-content docs-page">
+  <div class="container docs-layout">
+    <aside class="docs-sidebar">
+      <nav class="docs-toc" aria-label="Table of contents">
+        <h2>On this page</h2>
+        {{ .TableOfContents }}
+      </nav>
+    </aside>
+
+    <div class="docs-main">
+      <h1>{{ .Title }}</h1>
+      <p class="page-description">{{ .Description }}</p>
+
+      <div class="docs-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}

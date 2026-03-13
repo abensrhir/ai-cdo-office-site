@@ -1,0 +1,75 @@
+baseURL = "http://localhost:1313/"
+title = "The AI CDAIO Office"
+languageCode = "en-us"
+
+buildDrafts = false
+buildExpired = false
+buildFuture = false
+disableKinds = ["taxonomy", "term"]
+
+[permalinks]
+  [permalinks.section]
+    team = "/:section/"
+    commands = "/:section/"
+    docs = "/:section/"
+
+[menus]
+  [[menus.main]]
+    name = "Team"
+    pageRef = "/team/"
+    weight = 10
+  [[menus.main]]
+    name = "Commands"
+    pageRef = "/commands/"
+    weight = 20
+  [[menus.main]]
+    name = "Docs"
+    pageRef = "/docs/"
+    weight = 30
+  [[menus.main]]
+    name = "GitHub"
+    url = "https://github.com/abensrhir/ai-cdo-office"
+    weight = 40
+    [menus.main.params]
+      external = true
+
+[params]
+  description = "Your virtual Chief Data & AI Office — 17 specialized Claude agents that produce boardroom-ready deliverables."
+  author = "Anass Bensrhir"
+  authorURL = "https://abensrhir.com"
+  repoURL = "https://github.com/abensrhir/ai-cdo-office"
+  installCommand = "claude plugin install ai-cdo-office"
+  blogPostURL = "https://abensrhir.com/posts/how-ai-will-reshape-the-enterprise-data-function-by-2028/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github-dark"
+    lineNos = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
+# Mount parent directories so templates can read agent/command source files
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "office"
+    target = "assets/office"
+  [[module.mounts]]
+    source = "commands/cdaio"
+    target = "assets/commands"

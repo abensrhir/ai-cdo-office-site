@@ -1,0 +1,22 @@
+<header class="site-header">
+  <nav class="nav-container" aria-label="Main navigation">
+    <a href="{{ "/" | relURL }}" class="nav-logo">AI CDAIO Office</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-hidden="true">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </label>
+
+    <ul class="nav-links">
+      {{ range site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}"
+            {{ if $.IsMenuCurrent "main" . }}class="active" aria-current="page"{{ end }}
+            {{ with .Params.external }}target="_blank" rel="noopener noreferrer"{{ end }}>
+            {{ .Name }}{{ with .Params.external }} <span class="external-icon" aria-hidden="true">&nearr;</span>{{ end }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

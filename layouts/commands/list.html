@@ -1,0 +1,102 @@
+{{ define "main" }}
+<article class="page-content">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="page-description">{{ .Description }}</p>
+
+    {{/* Read all command files from mounted assets */}}
+    {{ $allCommands := dict }}
+    {{ range resources.Match "commands/*.md" }}
+      {{ $raw := .Content }}
+      {{ $parts := split $raw "---" }}
+      {{ if ge (len $parts) 3 }}
+        {{ $fm := index $parts 1 | transform.Unmarshal }}
+        {{ if $fm }}
+          {{ $slug := strings.TrimPrefix "cdaio:" $fm.name }}
+          {{ $allCommands = merge $allCommands (dict $slug $fm) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Define command categories matching README */}}
+    {{ $categories := slice
+      (dict "name" "Playbooks" "desc" "Multi-agent orchestration for complex scenarios" "commands" (slice "strategy" "governance" "board-prep" "first-90-days" "quarterly"))
+      (dict "name" "Programs" "desc" "Multi-step workflows with specialized agents" "commands" (slice "ai-governance" "org-design" "data-quality" "cost-optimization" "vendor-eval"))
+      (dict "name" "Deliverables" "desc" "Single-agent focused output" "commands" (slice "assess" "policy" "deck" "architecture" "use-cases" "benchmark" "compliance" "raci"))
+      (dict "name" "Utilities" "desc" "Setup and quality tools" "commands" (slice "review" "init"))
+    }}
+
+    {{ range $cat := $categories }}
+      <div class="command-category" id="{{ $cat.name | urlize }}">
+        <h2 class="category-heading">{{ $cat.name }} <span class="count">({{ len $cat.commands }})</span></h2>
+        <p class="section-sub section-sub-left">{{ $cat.desc }}</p>
+        <div class="command-list">
+          {{ range $slug := $cat.commands }}
+            {{ $cmd := index $allCommands $slug }}
+            {{ if $cmd }}
+              <div class="command-detail-card" id="cmd-{{ $slug }}">
+                <code>/cdaio:{{ $slug }}</code>
+                <p>{{ $cmd.description }}</p>
+                {{ with (index $cmd "argument-hint") }}
+                  {{ if ne . "" }}
+                    <p class="command-hint">e.g. /cdaio:{{ $slug }} {{ . }}</p>
+                  {{ end }}
+                {{ end }}
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+    <!-- Playbooks Detail Section -->
+    <div class="command-category" id="playbook-workflows">
+      <h2 class="category-heading">Playbook Workflows <span class="count">(10)</span></h2>
+      <p class="section-sub section-sub-left">Multi-agent workflows for common CDAIO scenarios. Each playbook coordinates handoffs between team members.</p>
+      <div class="command-list">
+        <div class="command-detail-card">
+          <code>First 90 Days</code>
+          <p>Full office activation for a new CDAIO. Every agent contributes to your onboarding plan.</p>
+        </div>
+        <div class="command-detail-card">
+          <code>Board Meeting Prep</code>
+          <p>CDO + Exec Comms + Analyst + Quality Reviewer produce a complete board package.</p>
+        </div>
+        <div class="command-detail-card">
+          <code>AI Strategy Sprint</code>
+          <p>Head of AI + ML Lead + Data Engineer + Architect deliver a comprehensive AI strategy.</p>
+        </div>
+        <div class="command-detail-card">
+          <code>Governance Framework</code>
+          <p>Head of Governance + Steward + Compliance build governance from scratch.</p>
+        </div>
+        <div class="command-detail-card">
+          <code>Quarterly Operating Rhythm</code>
+          <p>Chief of Staff + reporting roles establish ongoing cadence and dashboards.</p>
+        </div>
+        <div class="command-detail-card">
+          <code>AI Governance Program</code>
+          <p>AI/ML Lead + Compliance + Architect set up responsible AI and model oversight.</p>
+        </div>
+        <div class="command-detail-card">
+          <code>Data Org Redesign</code>
+          <p>Program Manager + Head of AI + Chief of Staff restructure the data team.</p>
+        </div>
+        <div class="command-detail-card">
+          <code>Data Quality Program</code>
+          <p>Data Steward + Custodian + Data Engineer fix systematic data quality issues.</p>
+        </div>
+        <div class="command-detail-card">
+          <code>Cost Optimization Sprint</code>
+          <p>Chief of Staff + Data Engineer + Data Analyst cut data/AI costs.</p>
+        </div>
+        <div class="command-detail-card">
+          <code>Vendor Evaluation</code>
+          <p>Data Engineer + Architect + Compliance evaluate and select data/AI vendors.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+{{ end }}

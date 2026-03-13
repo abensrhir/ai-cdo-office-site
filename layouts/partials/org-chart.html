@@ -1,0 +1,39 @@
+<div class="mermaid-container">
+  <pre class="mermaid">
+graph TD
+    Board["Board of Directors&lt;br/&gt;&lt;i&gt;Shareholder Gate&lt;/i&gt;"]
+    CDAIO["CDAIO&lt;br/&gt;&lt;i&gt;The Orchestrator&lt;/i&gt;"]
+    CoS["Chief of Staff&lt;br/&gt;&amp; Operations"]
+    HGov["Head of&lt;br/&gt;Data Governance"]
+    HAI["Head of AI&lt;br/&gt;&amp; Analytics"]
+    Exec["Exec Comms"]
+    PM["Program Mgr"]
+    Steward["Data Steward"]
+    Custodian["Data Custodian"]
+    Compliance["Compliance Officer"]
+    Eng["Data Engineer"]
+    AIML["AI/ML Lead"]
+    UC["Use Case Lead"]
+    Analyst["Data Analyst"]
+    Arch["Data &amp; AI Architect"]
+    SR["Stakeholder Relations"]
+    QR["Quality Reviewer"]
+
+    Board -->|reviews| CDAIO
+    CDAIO --> CoS
+    CDAIO --> HGov
+    CDAIO --> HAI
+    CoS --> Exec
+    CoS --> PM
+    CoS --> SR
+    HGov --> Steward
+    HGov --> Custodian
+    HGov --> Compliance
+    HAI --> Eng
+    HAI --> AIML
+    HAI --> UC
+    HAI --> Analyst
+    HAI --> Arch
+    CDAIO -.->|QA gate| QR
+  </pre>
+</div>

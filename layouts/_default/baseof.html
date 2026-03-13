@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ site.Title }}{{ end }}</title>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  {{ partial "nav.html" . }}
+  <main id="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  <!-- Shared copy button handler -->
+  <script>
+    document.querySelectorAll('[data-copy]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var text = this.dataset.copy;
+        var el = this;
+        navigator.clipboard.writeText(text).then(function() {
+          el.textContent = 'Copied!';
+          el.classList.add('copied');
+          setTimeout(function() {
+            el.textContent = 'Copy';
+            el.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    });
+  </script>
+  {{ if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#E8EDF5',
+        primaryTextColor: '#1B2A4A',
+        primaryBorderColor: '#2D4A7A',
+        lineColor: '#2D4A7A',
+        secondaryColor: '#F8F9FA',
+        tertiaryColor: '#E8EDF5',
+        fontSize: '16px'
+      },
+      flowchart: {
+        nodeSpacing: 20,
+        rankSpacing: 50,
+        curve: 'basis',
+        padding: 12
+      }
+    });
+  </script>
+  {{ end }}
+</body>
+</html>

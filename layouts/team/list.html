@@ -1,0 +1,58 @@
+{{ define "main" }}
+<article class="page-content">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="page-description">{{ .Description }}</p>
+
+    <!-- Org Chart -->
+    <div class="team-chart-inline">
+      {{ partial "org-chart.html" . }}
+    </div>
+
+    {{/* Helper: parse frontmatter from a mounted asset file */}}
+    {{/* Agent files are mounted at assets/office/ */}}
+
+    {{ $departments := slice
+      (dict "name" "The Orchestrator" "pattern" "office/cdo.md")
+      (dict "name" "Board Oversight" "pattern" "office/board/*.md")
+      (dict "name" "Leadership" "pattern" "office/leadership/*.md")
+      (dict "name" "Data Governance" "pattern" "office/governance/*.md")
+      (dict "name" "AI & Analytics" "pattern" "office/ai-analytics/*.md")
+      (dict "name" "Operations" "pattern" "office/operations/*.md")
+      (dict "name" "Quality" "pattern" "office/quality/*.md")
+    }}
+
+    {{ range $dept := $departments }}
+      {{ $files := resources.Match $dept.pattern }}
+      {{ if $files }}
+        <div class="team-department" id="{{ $dept.name | urlize }}">
+          <h2 class="department-heading">{{ $dept.name }}</h2>
+          <div class="agent-cards">
+            {{ range $file := $files }}
+              {{ $raw := .Content }}
+              {{ $parts := split $raw "---" }}
+              {{ if ge (len $parts) 3 }}
+                {{ $fm := index $parts 1 | transform.Unmarshal }}
+                {{ if $fm }}
+                  <div class="agent-card" id="{{ $fm.name | urlize }}">
+                    <h3>{{ $fm.name }}</h3>
+                    {{ with $fm.role }}<span class="agent-role-badge">{{ . }}</span>{{ end }}
+                    <p class="agent-description">{{ $fm.description }}</p>
+                    {{ with $fm.tools }}
+                      {{ if gt (len .) 0 }}
+                        <p class="agent-tools">Produces: {{ delimit . ", " }}</p>
+                      {{ end }}
+                    {{ end }}
+                  </div>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    {{ end }}
+
+  </div>
+</article>
+{{ .Store.Set "hasMermaid" true }}
+{{ end }}

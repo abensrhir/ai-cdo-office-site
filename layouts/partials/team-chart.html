@@ -1,0 +1,9 @@
+<section class="team-chart" aria-labelledby="chart-heading">
+  <div class="container">
+    <h2 id="chart-heading">A Complete CDAIO Organization</h2>
+    <p class="section-sub">17 specialized agents mirroring a real Chief Data & AI Office, with a simulated Board of Directors providing oversight.</p>
+    {{ partial "org-chart.html" . }}
+    <p class="section-link"><a href="{{ "/team/" | relURL }}">Meet every team member &rarr;</a></p>
+  </div>
+</section>
+{{ .Page.Store.Set "hasMermaid" true }}
