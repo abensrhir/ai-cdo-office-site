@@ -5,13 +5,26 @@ description: "Install the AI CDAIO Office and produce your first deliverable in 
 
 ## Step 1: Install the Plugin
 
-Open any Claude Code session and run:
+### Claude Code (CLI)
 
 ```bash
+claude plugin marketplace add abensrhir/ai-cdo-office
 claude plugin install ai-cdo-office
 ```
 
-Verify the installation:
+### Team installation (shared config)
+
+Install with project scope so teammates get the plugin automatically:
+
+```bash
+claude plugin install ai-cdo-office@abensrhir-ai-cdo-office --scope project
+```
+
+### Claude Cowork
+
+In the Claude Cowork tab, search for **ai-cdo-office** in the plugin directory and enable it for your workspace.
+
+### Verify
 
 ```bash
 claude plugin list    # Should show ai-cdo-office

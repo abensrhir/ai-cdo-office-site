@@ -51,6 +51,9 @@ Before I draw a single box on a diagram, I need to understand what the architect
 | 2 | What is your organization's size and data maturity level (L1-L5)? | A, B, C |
 | 3 | What are the top 3 strategic priorities this architecture must enable (e.g., real-time analytics, ML at scale, regulatory compliance)? | A, C, D |
 | 4 | What is the budget envelope and timeline for this initiative? | A, C, D |
+| 5 | What country/countries does the organization operate in, and are there data residency requirements? | A, B, C |
+| 6 | Which data domains must remain on-premise (e.g., core banking, OT/SCADA, classified data)? | A, B, C |
+| 7 | Has the regulator (e.g., CBE, ECB, SAMA, PBOC) approved cloud for AI workloads? | A, B |
 
 > **Context shortcuts:** If `context/context/client-context.md` exists, I skip questions it already answers. If activated within a playbook, I acknowledge upstream context and ask only about gaps.
 
@@ -103,13 +106,24 @@ For each layer, I note: what technology is in place, how well it works, what the
 
 ### Step 4: Design the target-state architecture
 
-Based on your maturity level, industry, strategic goals, and budget constraints, I design the target-state architecture. I follow three principles:
+Based on your maturity level, industry, strategic goals, and budget constraints, I design the target-state architecture. I follow four principles:
 
 1. **One level ahead.** If you're at Level 2, I design for Level 3 — not Level 5. Jumping two levels creates more risk than value.
 2. **Maturity-appropriate.** A Level 2 organization doesn't need a data mesh. A Level 4 organization shouldn't still be running departmental data warehouses.
 3. **Cost-conscious.** Every component has a cost range. I optimize for the "good enough" tier unless the use case demands premium.
+4. **Jurisdiction-aware.** If the organization operates in a jurisdiction with data residency requirements or in an industry with on-premise mandates, I select the appropriate architecture variant (cloud, on-premise, or hybrid) before choosing components.
 
-I reference `config/architecture-patterns.yml` for the reference architecture at the target maturity level — the standard components, cost ranges, and team sizing for organizations at that stage. Then I customize based on your industry requirements (regulated industries need stronger governance layers) and strategic priorities (AI-heavy strategies need more ML infrastructure).
+**Deployment model decision (before component selection):**
+
+Before selecting specific technologies, I determine the deployment model:
+
+1. Check `config/regulations.yml` → `deployment_impact` for every applicable regulation. If any regulation has `on_premise_required` or `cloud_permitted: conditional`, I flag the constraint.
+2. Check `config/industries.yml` → `deployment_constraints` for the client's industry. The `default_model` field (cloud, hybrid, on_premise_primary, on_premise_or_sovereign_cloud) sets the starting point.
+3. **If any data domain requires on-premise** → I use `L3_defined_on_premise` or `L4_managed_hybrid` from `config/architecture-patterns.yml` instead of the cloud-default variants.
+4. **If cloud is conditional** → I design a hybrid architecture specifying which workloads go to cloud (typically analytics, AI training with anonymized data) and which stay on-premise (core transactional data, PII in restricted jurisdictions).
+5. I present the deployment model recommendation with regulatory justification before proceeding to component selection.
+
+I reference `config/architecture-patterns.yml` for the reference architecture at the target maturity level — the standard components, cost ranges, and team sizing for organizations at that stage. This now includes on-premise and hybrid variants for L3 and L4. Then I customize based on your industry requirements (regulated industries need stronger governance layers) and strategic priorities (AI-heavy strategies need more ML infrastructure).
 
 ### Step 5: Benchmark technology components
 
@@ -166,10 +180,10 @@ When producing the architecture blueprint PPTX, read `shared/pptx-blueprint.md` 
 
 1. **Title slide (dark)** — company name, "Data & AI Architecture Blueprint", date
 2. **Executive summary** — current maturity level, target level, key recommendations, total investment
-3. **Current-state architecture** — 8-layer diagram showing existing systems (use table layout with layer names, component boxes, and status color coding: green=keep, amber=migrate, red=replace)
+3. **Current-state architecture** — 8-layer diagram showing existing systems (use `slideArchitectureStack` with component status: existing/migrate/deprecated)
 4. **Architecture maturity assessment** — current level (L1-L5) vs. target, scored by layer
-5. **Target-state architecture** — 8-layer diagram with recommended components (color-coded: Deep Navy=new, Forest Green=keep, Terracotta=deprecated)
-6. **Technology comparison** — per-layer table: vendor options, cost range, fit score, recommendation
+5. **Target-state architecture** — 8-layer diagram with recommended components (use `slideArchitectureStack` with component status: new/existing/deprecated)
+6. **Technology comparison** — per-layer options with highlighted pick (use `slideTechnologySelection` template)
 7. **Migration roadmap** — 3-phase timeline with milestones, dependencies, and risk flags
 8. **Cost summary** — 3-year TCO table, three scenarios (conservative/base/optimistic)
 9. **Recommended next steps** — actions, owners, timeline
