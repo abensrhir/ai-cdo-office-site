@@ -456,6 +456,36 @@ pre {
   background: var(--medium-blue);
   color: var(--white);
 }
+.oc-advisors-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 20px;
+  position: relative;
+  flex-wrap: wrap;
+}
+.oc-advisors-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--teal) 0 4px,
+    transparent 4px 8px
+  );
+}
+.oc-advisor {
+  background: var(--white);
+  color: var(--deep-navy);
+  border: 2px dashed var(--teal);
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+}
 .oc-director {
   background: var(--ice-blue);
   color: var(--deep-navy);
